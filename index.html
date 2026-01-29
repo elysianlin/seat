@@ -9,32 +9,33 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="app">
+        <h1>Online Seating Chart</h1>
 
-    <h1>Online Seating Chart</h1>
+        <div class="controls">
+            <label>
+                Number of Columns:
+                <input type="number" id="cols" min="1" value="4">
+            </label>
+            <label>
+                Number of Rows:
+                <input type="number" id="rows" min="1" value="4">
+            </label>
+            <button onclick="generateSeats()">Generate Seats</button>
+        </div>
 
-    <div class="controls">
-        <label>
-            Number of Columns:
-            <input type="number" id="cols" min="1" value="4">
-        </label>
-        <label>
-            Number of Rows:
-            <input type="number" id="rows" min="1" value="4">
-        </label>
-        <button onclick="generateSeats()">Generate Seats</button>
+        <div class="student-input">
+            <h3>Add Student</h3>
+            <input type="text" id="studentName" placeholder="Student Name">
+            <input type="file" id="studentPhoto" accept="image/*">
+            <p class="hint">👉 Click a seat to assign the student</p>
+        </div>
+
+        <div class="classroom">
+            <div class="blackboard">Blackboard</div>
+            <div id="seats" class="seats"></div>
+        </div>
+    
     </div>
-
-    <div class="student-input">
-        <h3>Add Student</h3>
-        <input type="text" id="studentName" placeholder="Student Name">
-        <input type="file" id="studentPhoto" accept="image/*">
-        <p class="hint">👉 Click a seat to assign the student</p>
-    </div>
-
-    <div class="classroom">
-        <div class="blackboard">Blackboard</div>
-        <div id="seats" class="seats"></div>
-    </div>
-
 </body>
 </html>

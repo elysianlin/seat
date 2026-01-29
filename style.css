@@ -1,70 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
-  padding: 20px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: linear-gradient(180deg, #f2f4f8, #e9ecf1);
+  margin: 0;
+  padding: 40px 0;
+}
+
+.app {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
 }
 
-.controls, .student-input {
+/* ===== Controls ===== */
+.controls,
+.student-input {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
   margin-bottom: 20px;
-  text-align: center;
+}
+
+.controls label {
+  margin: 0 10px;
+  font-size: 14px;
 }
 
 .controls input {
   width: 60px;
-  margin: 0 5px;
+  padding: 6px;
+  margin-left: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
+button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* ===== Student input ===== */
+.student-input h3 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.student-input input[type="text"] {
+  padding: 8px;
+  width: 200px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.student-input input[type="file"] {
+  font-size: 14px;
+}
+
+.hint {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* ===== Classroom ===== */
 .classroom {
-  width: fit-content;
-  margin: auto;
+  margin-top: 30px;
 }
 
 .blackboard {
-  background: #2f4f4f;
-  color: white;
+  background: linear-gradient(135deg, #1f2933, #374151);
+  color: #f9fafb;
   text-align: center;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 20px;
-  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 18px;
+  border-radius: 10px;
+  letter-spacing: 1px;
 }
 
+/* ===== Seats ===== */
 .seats {
   display: grid;
-  gap: 10px;
+  gap: 14px;
+  justify-content: center;
 }
 
 .seat {
-  width: 100px;
-  height: 100px;
-  background: white;
-  border: 2px dashed #aaa;
-  border-radius: 8px;
+  width: 110px;
+  height: 110px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 2px dashed #d1d5db;
   cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.seat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.seat.filled {
+  border: 2px solid #22c55e;
 }
 
 .seat img {
   width: 100%;
-  height: 70%;
+  height: 72%;
   object-fit: cover;
-  border-radius: 6px 6px 0 0;
 }
 
 .seat .name {
   text-align: center;
   font-size: 14px;
-  padding: 2px;
+  padding: 4px;
+  background: #f1f5f9;
 }
 
-.seat.filled {
-  border: 2px solid #4caf50;
-}
-
-.hint {
-  color: #555;
-  font-size: 14px;
+/* ===== Selected student ===== */
+.seat[style*="orange"] {
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.5);
 }
