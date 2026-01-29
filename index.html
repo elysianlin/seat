@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Seating Chart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqex
+    RcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />"
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <h1>Online Seating Chart</h1>
+
+    <div class="controls">
+        <label>
+            Number of Columns:
+            <input type="number" id="cols" min="1" value="4">
+        </label>
+        <label>
+            Number of Rows:
+            <input type="number" id="rows" min="1" value="4">
+        </label>
+        <button onclick="generateSeats()">Generate Seats</button>
+    </div>
+
+    <div class="student-input">
+        <h3>Add Student</h3>
+        <input type="text" id="studentName" placeholder="Student Name">
+        <input type="file" id="studentPhoto" accept="image/*">
+        <p class="hint">👉 Click a seat to assign the student</p>
+    </div>
+
+    <div class="classroom">
+        <div class="blackboard">Blackboard</div>
+        <div id="seats" class="seats"></div>
+    </div>
+
+</body>
+</html>
